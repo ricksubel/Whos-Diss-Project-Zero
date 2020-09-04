@@ -422,13 +422,6 @@ $('.rap-button').click(function() {
 // RELOADS/REPLAYS THE SAME GAME LEVEL
 $('.rap-replay').click(function() {
     $gameCheck();
-    // $('.score').toggleClass('hidden');
-    // $('.score-message').toggleClass('hidden');
-    // $('.rap-button').toggleClass('hidden');
-    // $('.img').toggleClass('hidden');
-    // $('.questions').toggleClass('hidden');
-    // $('.rap-replay').toggleClass('hidden');
-    // $('.rap-finish').toggleClass('hidden');
     questionTracker = 0;
     userScore = 0;
     showQuestions(rapQuest[0]);
@@ -468,15 +461,10 @@ $('.celeb-button').click(function() {
 
 // RELOADS/REPLAYS THE SAME GAME LEVEL
 $('.celeb-replay').click(function() {
-    $('.score').toggleClass('hidden');
-    $('.celeb-button').toggleClass('hidden');
-    $('.img').toggleClass('hidden');
-    $('.questions').toggleClass('hidden');
-    $('.celeb-replay').toggleClass('hidden');
-    $('.celeb-finish').toggleClass('hidden');
+    $gameCheck();
     questionTracker = 0;
     userScore = 0;
-    showQuestions(celebQuest[0]);
+    showQuestions(rapQuest[0]);
     $removeSelection();
 });
 
@@ -514,15 +502,10 @@ $('.auth-button').click(function() {
 
 // RELOADS/REPLAYS THE SAME GAME LEVEL
 $('.auth-replay').click(function() {
-    $('.score').toggleClass('hidden');
-    $('.auth-button').toggleClass('hidden');
-    $('.img').toggleClass('hidden');
-    $('.questions').toggleClass('hidden');
-    $('.auth-replay').toggleClass('hidden');
-    $('.auth-finish').toggleClass('hidden');
+    $gameCheck();
     questionTracker = 0;
     userScore = 0;
-    showQuestions(authQuest[0]);
+    showQuestions(rapQuest[0]);
     $removeSelection();
 });
 
