@@ -273,7 +273,7 @@ const authQuest = [
     },
     {
         question:'Who stated, “An enthusiasm for Poe is the mark of a decidedly primitive stage of reflection.” about Edgard Allen Poe?"',
-        image: './Assets/Images/T12.jpg',
+        image: './Assets/Images/T1.jpg',
         optionA: 'Ann Rice',
         optionB: 'Arthur Miller',
         optionC: 'Henry James',
@@ -385,7 +385,11 @@ const $gameCheck = () => {
     $('.img').toggleClass('hidden');
     $('.questions').toggleClass('hidden');
     $('.score').toggleClass('hidden');
+    if ($('.score-message.hidden')) {
+        $('.score-message').addClass('show');
+    }
     $('.score-message').toggleClass('hidden');
+    console.log($('.score-message'));
     $displayScore(userScore);
 };
 
@@ -417,12 +421,14 @@ $('.rap-button').click(function() {
 
 // RELOADS/REPLAYS THE SAME GAME LEVEL
 $('.rap-replay').click(function() {
-    $('.score').toggleClass('hidden');
-    $('.rap-button').toggleClass('hidden');
-    $('.img').toggleClass('hidden');
-    $('.questions').toggleClass('hidden');
-    $('.rap-replay').toggleClass('hidden');
-    $('.rap-finish').toggleClass('hidden');
+    $gameCheck();
+    // $('.score').toggleClass('hidden');
+    // $('.score-message').toggleClass('hidden');
+    // $('.rap-button').toggleClass('hidden');
+    // $('.img').toggleClass('hidden');
+    // $('.questions').toggleClass('hidden');
+    // $('.rap-replay').toggleClass('hidden');
+    // $('.rap-finish').toggleClass('hidden');
     questionTracker = 0;
     userScore = 0;
     showQuestions(rapQuest[0]);
