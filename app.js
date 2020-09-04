@@ -38,6 +38,7 @@ let player = '';
 let text = document.getElementsByName('input');
 let input = $(text);
 
+//METHODS OF MAKING PLAYER INPUT DATA PUSH ACROSS ALL .HTML PAGES
 $('.start').click(function() {
     player = input.val();
     console.log(`Hello, ${player}!`);
@@ -54,7 +55,7 @@ if (player) {
     $('#message1').text(`Hello ${player}! Select one of the categories to the right, and you will be challenged with ten questions. See if you have what it takes to become "Diss Royalty"!`)
 };
 
-// Game Questions:
+//DEFINES IN GLOBAL
 const rapQuest = [
     {
         question:'Who called out Lil Kim with their 2000 track, "Bang, Bang"?',
@@ -305,10 +306,12 @@ const authQuest = [
 ];
 
 
+//DEFINES IN GLOBAL
 let questionTracker = 0;
 let userScore = 0;
 
-// pull questions from the arrays and pushes onto the games container div
+
+// PULLS QUESTION/IMAGES FROM (category)ARRAY
 const showQuestions = (question) => {
     $('.quest-container h3').html(question.question);
     $('.quest-container img').attr('src', question.image);
@@ -318,7 +321,7 @@ const showQuestions = (question) => {
 
 };
 
-// // Check if radio selection answers are correct or not
+//CHECKS ANSWERS AGAINST SIBLING IN (category)QUEST ARRAY
 const checkAnswers = (array) => {
     const $answer = $('input[name=answers]:checked').siblings('label').html();
     const correct = array.correct;
@@ -331,12 +334,12 @@ const checkAnswers = (array) => {
     console.log(`Score: ${userScore}`);
 };
 
-// Removes previous radio selection
+// REMOVES THE PREVIOUS ANSWER SELECTION
 const $removeSelection = () => {
     $removeCheck = $('input[name=answers]:checked').prop('checked', false);
 };
 
-//If can combine these next two blocks, do it!
+//SELECTS EACH SCORE TO PUSH TO THE POST-GAME SCORE REVEAL
 const $scoreImg = (score) => {
     if ( score == 0 ) {
         $('.score-text h2').eq(1).css('color', 'white');
@@ -363,20 +366,20 @@ const $scoreImg = (score) => {
     }
 };
 
-// Display score through DOM
+// DISPLAYS THE SCORE ONTO THE HIDDEN SCORE/MESSAGE BACKGROUND
 const $displayScore = (score) => {
     $('.score h2').eq(1).html(`${score}/10`);
     $scoreImg(score);
         if (score <= 3) {
             $('.score-message').text(`${player}...uhm, are you for real? You really should brush up on your 'diss-tory.' (That's diss + history, just in case). You are a 'Michelle', when you could be a 'Beyonce'...(or at least a 'Kelly')?`);
-        } if (score > 3 && score <= 7) {
+        } else if (score > 3 && score <= 7) {
             $('.score-message').text(`Alright, alright...you did good, ${player}. Still some more work to do but your head's really in diss! If you really wanna beef, you better start cookin'!`);
-        } if (score > 7 && score == 10) {
+        } else if (score > 7 && score <= 10) {
             $('.score-message').text(`You're more MVP than Jordan, more E=mc^2 than Einstein, and have more bap than Bey. But...ya still ugly! Congrats on a good game ${player}. Check out our other categories for more of diss!`);
         }
 };
 
-// If game is over, remove all questions and show score
+// REMOVES ALL SELECTIONS/ANSWERS AND SHOW TALLIED SCORE
 const $gameCheck = () => {
     console.log('Game over');
     $('.img').toggleClass('hidden');
@@ -386,25 +389,19 @@ const $gameCheck = () => {
     $displayScore(userScore);
 };
 
-//initializes Rappers game from Categories page
+
+
+//INITIALIZES RAPPERS-GAME FROM THE CATEGORIES PAGE
 $('.rap').click(function() {
     window.location = './rap-page.html?player=' + player;
 });
 
-// MAKE SURE THE GAME PROMPTS AFTER THE CORRECT-GAME PAGE LOADS!!!
-if (gameStart === false && firstQuestion === true || player) {
-    questionTracker = 0;
-    userScore = 0;
-    showQuestions(rapQuest[0]);
-    console.log(rapQuest[0]);
-    $removeSelection();
-};
-
-// Check, tally, and remove questions answered
+// CHECKS, TALLIES, AND REMOVES SELECTIONS/ANSWERS
 $('.rap-button').click(function() {
     if (firstQuestion === true) {
         firstQuestion = false;
     }
+    //CYCLES THROUGH CONSECUTIVELY 
     checkAnswers(rapQuest[questionTracker]);
     questionTracker++;
     if (questionTracker == 10) {
@@ -418,7 +415,7 @@ $('.rap-button').click(function() {
     }
 });
 
-// Replay the same game. Add more questions?
+// RELOADS/REPLAYS THE SAME GAME LEVEL
 $('.rap-replay').click(function() {
     $('.score').toggleClass('hidden');
     $('.rap-button').toggleClass('hidden');
@@ -432,32 +429,24 @@ $('.rap-replay').click(function() {
     $removeSelection();
 });
 
-//Finish game and return to Category page
+//FINISHES GAME AND RETURNS TO CATEGORIES PAGE
 $('.rap-finish').on('click', function() { 
     window.location = './category.html?player=' + player;
 });
 
 
-//initializes Celeb game from Categories page
+//INITIALIZES CELEBS-GAME FROM THE CATEGORIES PAGE
 $('.celeb').on('click', function() { 
     window.location = './celeb-page.html?player=' + player;
 });
 
-//Has to occur after redirect from Categories page
-if (gameStart === false && firstQuestion === true || player) {
-    questionTracker = 0;
-    userScore = 0;
-    showQuestions(celebQuest[0]);
-    console.log(celebQuest[0]);
-    $removeSelection();
-};
 
-
-// Check, tally, and remove questions answered
+// CHECKS, TALLIES, AND REMOVES SELECTIONS/ANSWERS
 $('.celeb-button').click(function() {
     if (firstQuestion === true) {
         firstQuestion = false;
     }
+    //CYCLES THROUGH CONSECUTIVELY 
     checkAnswers(celebQuest[questionTracker]);
     questionTracker++;
     if (questionTracker == 10) {
@@ -471,7 +460,7 @@ $('.celeb-button').click(function() {
     }
 });
 
-// Replay the same game. Add more questions?
+// RELOADS/REPLAYS THE SAME GAME LEVEL
 $('.celeb-replay').click(function() {
     $('.score').toggleClass('hidden');
     $('.celeb-button').toggleClass('hidden');
@@ -486,31 +475,24 @@ $('.celeb-replay').click(function() {
 });
 
 
-//Finish game and return to Category page
+//FINISHES GAME AND RETURNS TO CATEGORIES PAGE
 $('.celeb-finish').on('click', function() { 
     window.location = './category.html?player=' + player;
 });
 
 
-//initializes Authors game
+//INITIALIZES AUTHORS-GAME FROM THE CATEGORIES PAGE
 $('.auth').on('click', function() { 
     window.location = './auth-page.html?player=' + player;
 });
 
-if (gameStart === false && firstQuestion === true || player) {
-    questionTracker = 0;
-    userScore = 0;
-    showQuestions(authQuest[0]);
-    console.log(authQuest[0]);
-    $removeSelection();
-};
 
-
-// Check, tally, and remove questions answered
+// CHECKS, TALLIES, AND REMOVES SELECTIONS/ANSWERS
 $('.auth-button').click(function() {
     if (firstQuestion === true) {
         firstQuestion = false;
     }
+    //CYCLES THROUGH CONSECUTIVELY 
     checkAnswers(authQuest[questionTracker]);
     questionTracker++;
     if ( questionTracker == 10 ) {
@@ -524,7 +506,7 @@ $('.auth-button').click(function() {
     }
 });
 
-// Replay the same game. Add more questions?
+// RELOADS/REPLAYS THE SAME GAME LEVEL
 $('.auth-replay').click(function() {
     $('.score').toggleClass('hidden');
     $('.auth-button').toggleClass('hidden');
@@ -538,7 +520,7 @@ $('.auth-replay').click(function() {
     $removeSelection();
 });
 
-//Finish game and return to Category page
+//FINISHES THE GAME AND RETURNS TO THE CATEGORIES PAGE
 $('.auth-finish').on('click', function() { 
     window.location = './category.html?player=' + player;
 });

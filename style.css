@@ -57,7 +57,7 @@ body {
 #game-drop {
     position: absolute;
     margin-top: 1px;
-    margin-bottom 5px;
+    margin-bottom: 5px;
     font: 10px;
     bottom: 100%
 }

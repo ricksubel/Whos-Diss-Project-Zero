@@ -9,7 +9,6 @@
     <title>Who's Diss?</title>
 </head>
 <body>
-    <script src="./app.js" defer></script>
     <div class="rap-page">          
     <div class="quest-container">
         <div class="questbkg">
@@ -58,5 +57,15 @@
         </div>
     </div>
 </div>
+<script src="./app.js"></script>
+<script>
+    if (gameStart === false && firstQuestion === true || player) {
+    questionTracker = 0;
+    userScore = 0;
+    showQuestions(rapQuest[0]);
+    console.log(rapQuest[0]);
+    $removeSelection();
+};
+</script>
 </body>
 </html>
