@@ -1,74 +1,165 @@
 
 body {
+    font-family: "Russo One";
     margin: 0;
     height: 100vh;
     width: 100vw;
+    justify-content: center;
 }
 
+.audio {
+    margin-top: 20px;
+
+}
+
+.text {
+    align-content: center;
+    border-radius: 25px;
+}
+
+
+.drop {
+    color: rgb(38, 37, 37);
+    background-color: rgba(137, 250, 81, 0.9);
+    position: absolute;
+    border: none;
+    border-radius: 25px;
+    padding: 5px;
+    margin-left: 100px;
+    margin-top: 100px;
+    display: flex;
+}
+
+#game-drop {
+    color: rgb(38, 37, 37);
+    background-color: rgba(137, 250, 81, 0.9);
+    position: absolute;
+    border: none;
+    border-radius: 25px;
+    padding: 5px;
+    display: flex;
+}
+
+
+.drop-content {
+    color: white;
+    font-size: 15px;
+    background-color: rgba(233, 18, 233, 0.5);
+    position: absolute;
+    display: none;
+    box-shadow: 4px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 6px 6px;
+    z-index: 1;
+    border: 1px solid rgba(137, 250, 81. 0.7);
+    border-radius: 25px;
+}
+
+#game-drop {
+    position: absolute;
+    margin-top: 1px;
+    margin-bottom 5px;
+    font: 10px;
+    bottom: 100%
+}
+
+.drop:hover .drop-content {
+display: block;
+}
+
+
 .intro {
-    background: url(./Assets/Images/Title/IntroPage.jpg);
-    height: 100vh;
-    width: 100vw;
+    background: url(./Assets/Images/Title/IntroPage2.jpg) no-repeat center center fixed;
+    height: 100%;
+    min-height:100%;
+    width: 100%;
+    min-width: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .title {
-    background: url(./Assets/Images/Title/TitlePage.jpg);
-    height: 100vh;
-    width: 100vw;
+    background: url(./Assets/Images/Title/TitlePage2.jpg) no-repeat center center fixed;
+    height: 100%;
+    min-height:100%;
+    width: 100%;
+    min-width: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .category {
-    background: url(./Assets/Images/MISC/GameBKG.jpg);
-    height: 100vh;
-    width: 100vw;
+    background: url(./Assets/Images/Title/GameBkg2.jpg) no-repeat center center fixed;
+    height: fit-content;
+    min-height:100%;
+    width: 100%;
+    min-width: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .rap-page {
-    background: url(./Assets/Images/Rappers/RapGame.jpg);
-    height: 100vh;
-    width: 100vw;
+    background: url(./Assets/Images/Rappers/RapGame.jpg) no-repeat center center fixed;
+    height: 100%;
+    min-height:100%;
+    width: 100%;
+    min-width: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
+
 .celeb-page {
-    background: url(./Assets/Images/Celebrities/CelebGame.jpg);
-    height: 100vh;
-    width: 100vw;
+    background: url(./Assets/Images/Celebrities/CelebGame.jpg) no-repeat center center fixed;
+    height: 100%;
+    min-height:100%;
+    width: 100%;
+    min-width: 100%;
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
 }
 
 .auth-page {
-    background: url(./Assets/Images/Authors/AuthGame.jpg);
-    height: 100vh;
-    width: 100vw;
+    background: url(./Assets/Images/Authors/AuthGame.jpg) no-repeat center center fixed;
+    height: 100%;
+    min-height:100%;
+    width: 100%;
+    min-width: 100%;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 
 .rap {
     background-image: url(./Assets/Images/MISC/ClickPlay.jpg);
 }
-
 .celeb {
     background-image: url(./Assets/Images/MISC/ClickPlay.jpg);
 }
-
 .auth {
     background-image: url(./Assets/Images/MISC/ClickPlay.jpg);
 }
@@ -77,20 +168,21 @@ body {
 .grid {
     display: grid;
     grid-template-columns: auto auto auto;
-    /* border-radius: var(--border-radius); */
+    border-radius: 25px;
     justify-content: center;
     align-content: center;
     height: 100vh;
 }
 
 .grid-item {
-    /* text-align: center; */
+    text-align: center;
     cursor: pointer;
-    margin: 15px;
-    border-radius: var(--border-radius);
-    background-size: 185px;
+    margin: 25px;
+    border-radius: 25px;
+    background-size: 225px;
     background-repeat: no-repeat;
     background-position: center;
+    box-shadow: 15px 10px 100px 2.5px rgb(212, 255, 0);
 }
 
 .grid-item img:hover {
@@ -98,51 +190,178 @@ body {
 }
 
 .grid-item img {
-    width: 185px;
-    border-radius: var(--border-radius);
+    width: 225px;
+    border-radius: 25px;
     overflow: hidden;
     vertical-align: middle;
     opacity: 100;
     transition: .2s ease;
 }
 
-.bg {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
-    background-image: url(./Assets/Images/MISC/ScoreBKG.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    transition: .25s ease;
-
-}
-
 button {
-    background: var(--primary);
+    color: rgb(69, 65, 65);
+    background-color: rgba(137, 250, 81, 1);
     border: none;
-    border-radius: var(--border-radius);
+    border-radius: 12px;
     cursor: pointer;
-    padding: 10px 20px;
-    margin-top: 10px;
-    font-family: var(--base-font);
-    color: var(--light);
+    padding: 5px 10px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-family: 'Russo One';
     font-size: 1em;
     transition: .3s ease;
     outline: none;
-    font-weight: 900;
+    font-weight: 500;
     letter-spacing: .1em;
+    display: center;
+}
 
+.quest-container {
+    background-image: url(./Assets/Images/MISC/ContainerBKG.jpg);
+    background-size: cover;
+    border: 3px solid fuchsia;
+    border-radius: 25px;
+    box-shadow: 0px 25px 25px 10px rgba(0,0,0,.2);
+    padding: 30px;
+    margin: 50px;
+    max-width: 600px;
+    min-width: 100px;;
+    position: fixed;
+    width: 100vw;
+    
+
+}
+
+.questbkg {
+    background-color: whitesmoke;
+    border-radius: 25px;
+    display: flex;
+    overflow: hidden;
+    max-width: 600px;
+    padding: 30px;
+    margin: auto;
+}
+
+.questions {
+    margin: 0 20px 0 20px;
+    max-width: 300px;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+}
+
+.quest-container img {
+    height: 200px;
+    border-radius: 12px;
+}
+
+.input {
+    align-self: center;
+}
+
+
+label {
+    font-family: "Russo One";
+    color: grey;
+    font-size: 1.15em;
+    padding: 5px;
+    line-height: 2em;
+    font-weight: 500;
+    letter-spacing: -.025em;
+}
+
+h3 {
+    font-family: "Russo One";
+    font-weight: 700;
+    font-size: 1.5em;
+    color: grey;
+    margin: 0 0 10px 0;
+}
+
+
+h2 {
+    font-family: "Russo One";
+    font-weight: 500;
+    font-size: 2em;
+    color: grey;
+    z-index: -1;
+    transition: .25s ease;
+}
+
+.score-message {
+    color: grey;
+    text-align: center;
+    max-width: 280px;
+    font-family: "Russo One";
+    font-weight: 600;
+    font-size: 1.4em;
+    margin-left: 45px;
+    margin-top: 30px;
+}
+
+.score {
+    grid-template-columns: auto auto;
+    display: grid;
+    height: 300px;
+}
+
+.score-text {
+    grid-template-columns: auto;
+    color: black;
+    width: 200px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.score h2:nth-child(2) {
+    background: rgba(233, 28, 233, 0.7);
+    color: white;
+    font-size: 2.6em;
+    font-family: "Russo One";
+    line-height: 100px;
+    border-radius: 10px 75px / 95px;
+    border: grey;
+}
+
+.scorebkg {
+    z-index: -1;
+    transition: .25s ease;
+   
+}
+
+.replay {
+    color:  rgb(69, 65, 65);
+    background-color: rgba(137, 250, 81, 1);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-family: 'Russo One';
+    font-size: 1em;
+    transition: .3s ease;
+    outline: none;
+    font-weight: 500;
+    letter-spacing: .1em;
+    display: center;
+}
+
+.score__replay:hover {
+    background: var(--secondary);
+}
+
+.score__finish:hover {
+    background: var(--primary-dark);
+}
+
+.questions__button:hover {
+    background: var(--primary-dark);
+    letter-spacing: .2em;
 }
 
 .hidden {
     display: none;
 }
 
-
-/* CREATE GAMEBOARD/BACKGROUND for each of three levels */
