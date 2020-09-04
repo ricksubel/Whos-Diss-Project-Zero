@@ -329,12 +329,12 @@ const checkAnswers = (array) => {
         console.log('Incorrect');
     }
     console.log(`Score: ${userScore}`);
-}
+};
 
 // Removes previous radio selection
 const $removeSelection = () => {
     $removeCheck = $('input[name=answers]:checked').prop('checked', false);
-}
+};
 
 //If can combine these next two blocks, do it!
 const $scoreImg = (score) => {
@@ -361,7 +361,7 @@ const $scoreImg = (score) => {
     } else {
         $('.score-text h2').eq(1).css('color', 'white');
     }
-}
+};
 
 // Display score through DOM
 const $displayScore = (score) => {
@@ -384,20 +384,21 @@ const $gameCheck = () => {
     $('.score').toggleClass('hidden');
     $('.score-message').toggleClass('hidden');
     $displayScore(userScore);
-}
+};
 
+//initializes Rappers game from Categories page
+$('.rap').click(function() {
+    window.location = './rap-page.html?player=' + player;
+});
 
+// MAKE SURE THE GAME PROMPTS AFTER THE CORRECT-GAME PAGE LOADS!!!
 if (gameStart === false && firstQuestion === true || player) {
     questionTracker = 0;
     userScore = 0;
     showQuestions(rapQuest[0]);
     console.log(rapQuest[0]);
     $removeSelection();
-}
-//initializes Rappers game from Categories page
-$('.rap').click(function() {
-    window.location = './rap-page.html?player=' + player;
-});
+};
 
 // Check, tally, and remove questions answered
 $('.rap-button').click(function() {
@@ -449,7 +450,7 @@ if (gameStart === false && firstQuestion === true || player) {
     showQuestions(celebQuest[0]);
     console.log(celebQuest[0]);
     $removeSelection();
-}
+};
 
 
 // Check, tally, and remove questions answered
