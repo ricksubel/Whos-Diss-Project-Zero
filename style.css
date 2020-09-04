@@ -224,8 +224,8 @@ button {
     box-shadow: 0px 25px 25px 10px rgba(0,0,0,.2);
     padding: 30px;
     margin: 50px;
-    max-width: 600px;
-    min-width: 100px;;
+    max-width: 700px;
+    min-width: 600px;;
     position: fixed;
     width: 100vw;
     
@@ -237,14 +237,15 @@ button {
     border-radius: 25px;
     display: flex;
     overflow: hidden;
-    max-width: 600px;
+    max-width: 700px;
+    min-width: 600px;
     padding: 30px;
     margin: auto;
 }
 
 .questions {
     margin: 0 20px 0 20px;
-    max-width: 300px;
+    max-width: 600px;
     text-align: left;
     align-items: center;
     justify-content: center;

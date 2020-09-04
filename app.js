@@ -26,8 +26,10 @@
 
 
 
-//The game start happens for all three pages at once. From category, needs to be cued by event listener.
+//The game start happens for all three pages at once. From category, needs to be cued by event listener. This is causing the first question of each game to not always be from that particular category!!!
 
+
+// Define the game-beginning and player input (name).
 let gameStart = false;
 let firstQuestion = true;
 console.log("Let's play Who's Diss?!");
@@ -302,11 +304,11 @@ const authQuest = [
     },
 ];
 
-let playerName = [''];
+
 let questionTracker = 0;
 let userScore = 0;
 
-// pull questions from the arrays and push onto the game pages
+// pull questions from the arrays and pushes onto the games container div
 const showQuestions = (question) => {
     $('.quest-container h3').html(question.question);
     $('.quest-container img').attr('src', question.image);
@@ -316,7 +318,7 @@ const showQuestions = (question) => {
 
 };
 
-// // Check if radio selection is correct or not
+// // Check if radio selection answers are correct or not
 const checkAnswers = (array) => {
     const $answer = $('input[name=answers]:checked').siblings('label').html();
     const correct = array.correct;
@@ -337,27 +339,27 @@ const $removeSelection = () => {
 //If can combine these next two blocks, do it!
 const $scoreImg = (score) => {
     if ( score == 0 ) {
-        $('.score-text h2').eq(1).css('background-image');
+        $('.score-text h2').eq(1).css('color', 'white');
     } else if ( score == 1 ) {
-        $('.score-text h2').eq(1).css('background-image');
+        $('.score-text h2').eq(1).css('color', 'white');
     } else if ( score == 2 ) {
-        $('.score-text h2').eq(1).css('background-image');
+        $('.score-text h2').eq(1).css('color', 'white');
     } else if ( score == 3 ) {
-        $('.score-text h2').eq(1).css('background-image');
+        $('.score-text h2').eq(1).css('color', 'white');
     } else if ( score == 4 ) {
-        $('.score-text h2').eq(1).css('background-image');
+        $('.score-text h2').eq(1).css('color', 'white');
     } else if ( score == 5 ) {
-        $('.score-text h2').eq(1).css('background-image');
+        $('.score-text h2').eq(1).css('color', 'white');
     } else if ( score == 6 ) {
-        $('.score-text h2').eq(1).css('background-image');
+        $('.score-text h2').eq(1).css('color', 'white');
     } else if ( score == 7 ) {
-        $('.score-text h2').eq(1).css('background-image');
+        $('.score-text h2').eq(1).css('color', 'white');
     } else if ( score == 8 ) {
-        $('.score-text h2').eq(1).css('background-image');
+        $('.score-text h2').eq(1).css('color', 'white');
     } else if ( score == 9 ) {
-        $('.score-text h2').eq(1).css('background-image');
+        $('.score-text h2').eq(1).css('color', 'white');
     } else {
-        $('.score-text h2').eq(1).css('background-image');
+        $('.score-text h2').eq(1).css('color', 'white');
     }
 }
 
@@ -383,8 +385,6 @@ const $gameCheck = () => {
     $('.score-message').toggleClass('hidden');
     $displayScore(userScore);
 }
-
-
 
 
 if (gameStart === false && firstQuestion === true || player) {
