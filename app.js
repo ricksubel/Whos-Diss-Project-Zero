@@ -17,7 +17,7 @@
 // For each right answer you get a "cheer" (sound effect) and positive affirmation, personalized to player name. For each wrong answer, you get a "jeer" (sound effect) and negative game reply, personalized to player name.
 
 /* PART THREE - THE END */
-// if player answers incorrectly three times, they will lose game, receive final diss, and be prmompted to replay
+// if player answers incorrectly three times, they will lose game, receive final diss, and be prompted to replay
 // if player wins (answers 6-10 questions for that round), they will receive a congrats, be awarded diss champ, and be prompted to replay
 
 /* Stretch Goals */
@@ -189,7 +189,7 @@ const celebQuest = [
         correct: 'Mariah Carey'
     },
     {
-        question:'Who called Fast 8 costart a "candya$$"?',
+        question:'Who called Fast 8 costar a "candya$$"?',
         image: './Assets/Images/T19.jpg',
         optionA: 'Jason Statham',
         optionB: 'The Rock',
@@ -202,7 +202,7 @@ const celebQuest = [
         optionA: 'Jennifer Anniston',
         optionB: 'Cameron Diaz',
         optionC: 'Gwyneth Paltrow',
-        correct: 'wyneth Paltrowwyneth Paltrow'
+        correct: 'Gwyneth Paltrow'
     },
     {
         question:'Who called out director, Michael Bay, for being "a tyrant" on the set of Transformers?',
@@ -272,7 +272,7 @@ const authQuest = [
         correct: 'W.H. Auden'
     },
     {
-        question:'Who stated, “An enthusiasm for Poe is the mark of a decidedly primitive stage of reflection.” about Edgard Allen Poe?"',
+        question:'Who stated, “An enthusiasm for Poe is the mark of a decidedly primitive stage of reflection.” about Edgar Allen Poe?"',
         image: './Assets/Images/T1.jpg',
         optionA: 'Ann Rice',
         optionB: 'Arthur Miller',
@@ -282,7 +282,7 @@ const authQuest = [
     {
         question:'Who called out James Joyce with the quote, "“I dislike Ulysses more and more — that is, I think it more and more unimportant;"',
         image: './Assets/Images/T16.jpg',
-        optionA: 'Viginia Woolf',
+        optionA: 'Virginia Woolf',
         optionB: 'F.Scott Fitzgerald',
         optionC: 'Kurt Vonnegut',
         correct: 'Virginia Woolf'
